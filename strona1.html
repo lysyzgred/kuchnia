@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przepisy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Przepisy</h1>
+    </header>
+    <div class="container">
+        <aside>
+            <h2>Filtry</h2>
+            <input type="text" id="search" placeholder="Wyszukaj...">
+            <select id="category">
+                <option value="">kategorie</option>
+                <option value="kuchnia_włoska">Kuchnia włoska</option>
+                <option value="kuchnia_polska">Kuchnia polska</option>
+                <option value="kuchnia_japońska">Kuchnia japońska</option>
+                <option value="kuchnia_chińska">Kuchnia chińska</option>
+                <option value="kuchnia_niemiecka">Kuchnia niemiecka</option>
+                <option value="kuchnia_hiszpańska">Kuchnia hiszpańska</option>
+                <option value="kuchnia_francuska">Kuchnia francuska</option>
+                <option value="kuchnia_wietnamska">Kuchnia wietnamska</option>
+                <option value="kuchnia_czeska">Kuchnia czeska</option>
+                <option value="kuchnia_grecka">Kuchnia grecka</option>
+                <option value="kuchnia_meksykańska">Kuchnia meksykańska</option>
+                <option value="kuchnia_turecka">Kuchnia turecka</option>
+            </select>
+            <button onclick="applyFilters()">Zastosuj filtry</button>
+
+            <hr>
+            <h2>Dodaj nowy przepis</h2>
+            <form id="addRecipeForm">
+                <label for="title">Tytuł:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="składniki">Składniki:</label>
+                <textarea id="składniki" name="składniki" rows="4" required></textarea>
+                <label for="instrukcje">Instrukcje:</label>
+                <textarea id="instrukcje" name="instrukcje" rows="4" required></textarea>
+                <label for="kuchnia">Kuchnia:</label>
+                <textarea id="kuchnia" name="kuchnia" rows="4" required></textarea>                
+                <button>Dodaj przepis</button>
+            </form>
+        </aside>
+    </div>
+
+</body>
+</html>
