@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<header>
+    <nav>
+        <a href="strona1.html">Przepisy</a>
+        <a href="wyszukiwarka.html">Wyszukiwarka</a>
+    </nav>
+</header>
+<body>
+    <div class="container">
+        <h1>Wyszukiwarka Przepisów</h1>
+        <form action="#">
+            <input type="text" placeholder="Wyszukaj przepis...">
+            <br>
+            <label for="Cuisines">Kuchnie:</label>
+            <select id="Cuisines">
+                <option value="kuchnia_włoska">Kuchnia włoska</option>
+                <option value="kuchnia_polska">Kuchnia polska</option>
+                <option value="kuchnia_japońska">Kuchnia japońska</option>
+                <option value="kuchnia_chińska">Kuchnia chińska</option>
+                <option value="kuchnia_niemiecka">Kuchnia niemiecka</option>
+                <option value="kuchnia_hiszpańska">Kuchnia hiszpańska</option>
+                <option value="kuchnia_francuska">Kuchnia francuska</option>
+                <option value="kuchnia_wietnamska">Kuchnia wietnamska</option>
+                <option value="kuchnia_czeska">Kuchnia czeska</option>
+                <option value="kuchnia_grecka">Kuchnia grecka</option>
+                <option value="kuchnia_meksykańska">Kuchnia meksykańska</option>
+                <option value="kuchnia_turecka">Kuchnia turecka</option>
+                <option value="kuchnia_angielska">Kuchnia angielska</option>
+            </select>
+            <label for="recipe-category">Kategoria:</label>
+                <select id="recipe-category" name="recipe-category">
+                    <option value="deser">Deser</option>
+                    <option value="zupa">Zupa</option>
+                    <option value="danie-glowne">Danie Główne</option>
+                </select>
+            <br>
+            <label for="data">Data:</label>
+            <input type="date" id="date" name="date"> 
+            <label for="rating">Ocena</label>
+                <select id="rating">
+                    <option value="10/10">10/10</option>
+                    <option value="9/10">9/10</option>
+                    <option value="8/10">8/10</option>
+                    <option value="7/10">7/10</option>
+                    <option value="6/10">6/10</option>
+                    <option value="5/10">5/10</option>
+                    <option value="4/10">4/10</option>
+                    <option value="3/10">3/10</option>
+                    <option value="2/10">2/10</option>
+                    <option value="1/10">1/10</option>
+                </select>
+            <br>
+            <input type="submit" value="Szukaj">
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Platforma Przepisów Kulinarnych</p>
+    </footer>
+</body>
+</html>
