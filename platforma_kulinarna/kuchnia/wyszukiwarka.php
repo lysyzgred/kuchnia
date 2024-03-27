@@ -8,8 +8,8 @@
 </head>
 <header>
     <nav>
-        <a href="strona1.html">Przepisy</a>
-        <a href="wyszukiwarka.html">Wyszukiwarka</a>
+        <a href="strona1.php">Przepisy</a>
+        <a href="wyszukiwarka.php">Wyszukiwarka</a>
     </nav>
 </header>
 <body>
