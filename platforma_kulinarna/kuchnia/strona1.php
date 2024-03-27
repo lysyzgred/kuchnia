@@ -11,8 +11,8 @@
         <h1>Platforma Przepisów Kulinarnych</h1>
     </header>
     <nav>
-        <a href="przepisy.html">Przepisy</a>
-        <a href="wyszukiwarka.html">Wyszukiwarka</a>
+        <a href="strona1.php">Przepisy</a>
+        <a href="wyszukiwarka.php">Wyszukiwarka</a>
     </nav>
     <main>
         <section id="add-recipe">
