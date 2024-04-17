@@ -75,54 +75,77 @@
     if ($conn->connect_error) {
         die("Połączenie nieudane: " . $conn->connect_error);
     }
-
-$search_query = isset($_GET['search_query']) ? $_GET['search_query'] : '';
-$cuisine = isset($_GET['Cuisines']) ? $_GET['Cuisines'] : '';
-$category = isset($_GET['category']) ? $_GET['category'] : '';
-$date = isset($_GET['date']) ? $_GET['date'] : '';
-$rating = isset($_GET['rating']) ? $_GET['rating'] : '';
-
-$sql = "SELECT * FROM kuchnia1 WHERE 1=1"; 
-
-if (!empty($search_query)) {
-    $sql .= " AND nazwa LIKE '%$search_query%'";
-}
-
-if (!empty($cuisine)) {
-    $sql .= " AND kuchnie = '$cuisine'";
-}
-
-if (!empty($category)) {
-    $sql .= " AND kategoria = '$category'";
-}
-
-if (!empty($date)) {
-    $sql .= " AND data = '$date'";
-}
-
-if (!empty($rating)) {
-    $sql .= " AND ocena = '$rating'";
-}
-
-$result = $conn->query($sql);
-
-if ($result === false) {
-    die("Błąd zapytania: " . $conn->error);
-}
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<h2>" . $row["nazwa"] . "</h2>";
-        echo "<p>Kuchnia: " . $row["kuchnie"] . "</p>";
-        echo "<p>Kategoria: " . $row["kategoria"] . "</p>";
-        echo "<p>Data: " . $row["data"] . "</p>";
-        echo "<p>Ocena: " . $row["ocena"] . "</p>";
-        echo "<p>Instrukcje: " . $row["instrukcje"] . "</p>";
+    $search_query = isset($_GET['search_query']) ? $_GET['search_query'] : '';
+    $cuisine = isset($_GET['Cuisines']) ? $_GET['Cuisines'] : '';
+    $category = isset($_GET['category']) ? $_GET['category'] : '';
+    $date = isset($_GET['date']) ? $_GET['date'] : '';
+    $rating = isset($_GET['rating']) ? $_GET['rating'] : '';
+    
+    $results = [];
+    
+    if (!empty($search_query)) {
+        $sql = "SELECT * FROM kuchnia1 WHERE nazwa LIKE '%$search_query%'";
+        $result = $conn->query($sql);
+        if ($result && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $results[] = $row;
+            }
+        }
     }
-
-} else {
-    echo "Brak wyników spełniających kryteria wyszukiwania.";
-}
+    
+    if (!empty($cuisine)) {
+        $sql = "SELECT * FROM kuchnia1 WHERE kuchnie = '$cuisine'";
+        $result = $conn->query($sql);
+        if ($result && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $results[] = $row;
+            }
+        }
+    }
+    
+    if (!empty($category)) {
+        $sql = "SELECT * FROM kuchnia1 WHERE kategoria = '$category'";
+        $result = $conn->query($sql);
+        if ($result && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $results[] = $row;
+            }
+        }
+    }
+    
+    if (!empty($date)) {
+        $sql = "SELECT * FROM kuchnia1 WHERE data = '$date'";
+        $result = $conn->query($sql);
+        if ($result && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $results[] = $row;
+            }
+        }
+    }
+    
+    if (!empty($rating)) {
+        $sql = "SELECT * FROM kuchnia1 WHERE ocena = '$rating'";
+        $result = $conn->query($sql);
+        if ($result && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $results[] = $row;
+            }
+        }
+    }
+    
+    // Display results
+    if (!empty($results)) {
+        foreach ($results as $row) {
+            echo "<h2>" . $row["nazwa"] . "</h2>";
+            echo "<p>Kuchnia: " . $row["kuchnie"] . "</p>";
+            echo "<p>Kategoria: " . $row["kategoria"] . "</p>";
+            echo "<p>Data: " . $row["data"] . "</p>";
+            echo "<p>Ocena: " . $row["ocena"] . "</p>";
+            echo "<p>Instrukcje: " . $row["instrukcje"] . "</p>";
+        }
+    } else {
+        echo "Brak wyników spełniających kryteria wyszukiwania.";
+    }
 
     $conn->close();
     ?>
