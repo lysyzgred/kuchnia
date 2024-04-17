@@ -121,7 +121,7 @@ if ($result->num_rows > 0) {
     }
 
 } else {
-    echo "<p style='text-align: center; color: red;'>Brak wyników spełniających kryteria wyszukiwania.</p>";
+    echo "Brak wyników spełniających kryteria wyszukiwania.";
 }
 
     $conn->close();
