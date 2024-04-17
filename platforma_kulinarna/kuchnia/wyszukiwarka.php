@@ -119,8 +119,12 @@ if ($result->num_rows > 0) {
         echo "<p>Ocena: " . $row["ocena"] . "</p>";
         echo "<p>Instrukcje: " . $row["instrukcje"] . "</p>";
     }
+} if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+
+    }
 } else {
-    echo "Brak wyników spełniających kryteria wyszukiwania.";
+    echo "<p class='no-results'>Brak wyników spełniających kryteria wyszukiwania.</p>";
 }
 
     $conn->close();
