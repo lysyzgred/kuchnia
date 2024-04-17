@@ -74,7 +74,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "kuchnia1";
+        $dbname = "platforma_kulinarna";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
 
