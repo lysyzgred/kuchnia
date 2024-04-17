@@ -68,7 +68,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "platofrma_kulinarna";
+    $dbname = "platforma_kulinarna";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
